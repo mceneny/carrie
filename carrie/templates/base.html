@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang='en'>
+	<head>
+		<title>Carrie's Coachings</title>
+		<meta charset='utf-8'>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1; shrink-to-fit=no">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+
+			<!-- Toggler/collapsibe Button -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- Links -->
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link 1</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link 2</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link 3</a>
+					</li>
+				</ul>
+			</div>
+
+		</nav>
+		<div class='container'>
+			<h1>{% block page_header %}Base Template Design{% endblock page_header %}</h1>
+            {% block content %}{% endblock content %}
+
+		</div>
+		<div id="js-scripts">
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+			<script>
+				$(function () {
+					var nua = navigator.userAgent;
+					var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1);
+					if (isAndroid) {
+						$('select.form-control').removeClass('form-control').css('width', '100%')
+					}
+				})
+			</script>
+		</div>
+	</body>
+</html>
