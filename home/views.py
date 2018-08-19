@@ -1,8 +1,11 @@
-from django.shortcuts import render
-from django.views.generic import View
+from django.views.generic import View, ListView
+
+from .models import Entry
 
 
-class IndexView(View):
+class IndexView(ListView):
 
-    def get(self, request, *args, **kwargs):
-        return render(request, template_name='home/index.html')
+    model = Entry
+    paginate_by = 50
+    template_name = 'home/index.html'
+    context_object_name = 'entries'

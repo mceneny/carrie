@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import EntryType, Entry
 
-# Register your models here.
+admin.site.register(EntryType)
+admin.site.register(Entry)
+

@@ -1,7 +1,26 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+
+
 {% block page_header %}Coach Carrie{% endblock page_header %}
 
 {% block content %}
     <h2>Carrie's Fitness Coaching</h2>
+
+    {% for entry in entries %}
+        <div class="row">
+            <div class="well">
+                <h3 class="jumbotron">{{ entry.name }}</h3>
+                <div>{{ entry.description }}</div>
+                {% if entry.image %}
+                    <img src="{{ entry.image.url }}" title="{{ entry.image_description }}"/>
+                {% endif %}
+                <div>
+                    {{ entry.updated_by.get_full_name }} at {{ entry.updated}}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock content %}
